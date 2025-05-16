@@ -1,0 +1,256 @@
+:root {
+    --primary-red: #e63946;
+    --dark-red: #d90429;
+    --black: #1d3557;
+    --light-bg: #f1faee;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--black);
+}
+
+header {
+    background: var(--black);
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-red {
+    color: var(--primary-red);
+}
+
+.calculator {
+    max-width: 700px;
+    margin: 30px auto;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.text-red {
+    color: var(--primary-red);
+}
+
+.form-container {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-red);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: var(--primary-red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
+}
+
+/* Стилі для таблиці результатів */
+.result-container {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    background: var(--black);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: rgba(230, 57, 70, 0.05);
+}
+
+.message {
+    background: rgba(230, 57, 70, 0.1);
+    border-left: 4px solid var(--primary-red);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--black);
+    font-size: 14px;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .calculator {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* ===== ДОДАТКОВІ СТИЛІ ===== */
+/* Додаємо тільки те, чого ще немає в вашому CSS */
+
+/* Покращений вигляд полів введення */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.2);
+}
+
+
+
+/* Стилі для підсумків */
+.summary-box {
+    background: linear-gradient(135deg, rgba(29, 53, 87, 0.03), rgba(230, 57, 70, 0.03));
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border: 1px dashed var(--primary-red);
+}
+
+.summary-box p {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+.summary-box strong {
+    color: var(--primary-red);
+}
+
+/* Анімація кнопки */
+.calculate-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.calculate-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0)
+    );
+    transform: rotate(30deg);
+    transition: all 0.3s;
+}
+
+.calculate-btn:hover::after {
+    left: 100%;
+}
+
+/* Адаптація для мобільних */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 15px;
+    }
+    
+    .input-group input, 
+    .input-group select {
+        padding: 10px 12px;
+    }
+}
