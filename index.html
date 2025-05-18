@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор кредитів | Банк</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40">
-                <path fill="#e63946" d="M12 2L4 12l8 10 8-10z"/>
-                <path fill="#1d3557" d="M12 6L6 12l6 6 6-6z"/>
+                <path fill="#e63946" d="M12 2L4 12l8 10 8-10z" />
+                <path fill="#1d3557" d="M12 6L6 12l6 6 6-6z" />
             </svg>
             <span>BANK<span class="logo-red">PRO</span></span>
         </div>
@@ -20,23 +22,23 @@
 
     <div class="calculator animate__animated animate__fadeIn">
         <h1><span class="text-red">Кредитний</span> калькулятор</h1>
-        
+
         <form id="creditForm" class="form-container">
             <div class="input-group">
                 <label for="amount">Сума кредиту (грн):</label>
                 <input type="number" id="amount" required min="1000" step="1000">
             </div>
-            
+
             <div class="input-group">
                 <label for="term">Термін (місяців):</label>
                 <input type="number" id="term" required min="1" max="120">
             </div>
-            
+
             <div class="input-group">
                 <label for="rate">Відсоткова ставка (%):</label>
                 <input type="number" id="rate" step="0.01" required min="1" max="50">
             </div>
-            
+
             <div class="input-group">
                 <label for="type">Тип платежу:</label>
                 <select id="type" required>
@@ -44,15 +46,15 @@
                     <option value="annuity">Ануїтетний</option>
                 </select>
             </div>
-            
+
             <div class="input-group">
                 <label for="startDate">Дата початку:</label>
                 <input type="date" id="startDate" required>
             </div>
-            
+
             <button type="submit" class="calculate-btn">Розрахувати</button>
         </form>
-        
+
         <div id="result" class="hidden result-container">
             <h2 class="text-red">Графік погашення</h2>
             <div class="table-wrapper">
@@ -76,6 +78,8 @@
         <p>© 2025 BANKPRO. Всі права захищені</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/themes.js"></script>
 </body>
+
 </html>

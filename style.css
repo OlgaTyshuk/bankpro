@@ -18,16 +18,21 @@ header {
     background: var(--black);
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 70px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
     color: var(--white);
     font-size: 24px;
     font-weight: 700;
+    margin: 0 auto;
 }
 
 .logo-red {
@@ -166,7 +171,6 @@ footer {
 }
 
 /* ===== ДОДАТКОВІ СТИЛІ ===== */
-/* Додаємо тільки те, чого ще немає в вашому CSS */
 
 /* Покращений вигляд полів введення */
 .input-group {
@@ -253,4 +257,39 @@ footer {
     .input-group select {
         padding: 10px 12px;
     }
+}
+
+/* Theme Switcher Styles */
+/* Theme Switcher Styles */
+.theme-switcher {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.theme-switcher label {
+    color: var(--white);
+    font-weight: bold;
+    margin: 0;
+    font-size: 16px;
+}
+
+.theme-switcher select {
+    width: auto;
+    padding: 6px 10px;
+    background: var(--white);
+    color: var(--black);
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.theme-switcher select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-red);
 }
